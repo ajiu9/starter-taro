@@ -1,7 +1,7 @@
 {
   "name": "starter-taro",
+  "type": "module",
   "version": "1.0.0",
-  "private": true,
   "description": "This is a taro template",
   "templateInfo": {
     "name": "vue3-pinia",
@@ -9,6 +9,8 @@
     "css": "Sass",
     "framework": "Vue3"
   },
+  "author": "",
+  "license": "MIT",
   "scripts": {
     "build:weapp": "taro build --type weapp",
     "build:swan": "taro build --type swan",
@@ -25,51 +27,55 @@
     "dev:h5": "npm run build:h5 -- --watch",
     "dev:rn": "npm run build:rn -- --watch",
     "dev:qq": "npm run build:qq -- --watch",
-    "dev:quickapp": "npm run build:quickapp -- --watch"
+    "dev:quickapp": "npm run build:quickapp -- --watch",
+    "lint": "eslint ."
   },
   "browserslist": [
     "defaults and fully supports es6-module",
     "maintained node versions"
   ],
-  "author": "",
-  "license": "MIT",
   "dependencies": {
     "@babel/runtime": "^7.7.7",
     "@tarojs/components": "4.0.9",
     "@tarojs/helper": "4.0.9",
-    "@tarojs/plugin-platform-weapp": "4.0.9",
+    "@tarojs/plugin-framework-vue3": "4.0.9",
     "@tarojs/plugin-platform-alipay": "4.0.9",
-    "@tarojs/plugin-platform-tt": "4.0.9",
-    "@tarojs/plugin-platform-swan": "4.0.9",
+    "@tarojs/plugin-platform-h5": "4.0.9",
     "@tarojs/plugin-platform-jd": "4.0.9",
     "@tarojs/plugin-platform-qq": "4.0.9",
-    "@tarojs/plugin-platform-h5": "4.0.9",
+    "@tarojs/plugin-platform-swan": "4.0.9",
+    "@tarojs/plugin-platform-tt": "4.0.9",
+    "@tarojs/plugin-platform-weapp": "4.0.9",
     "@tarojs/runtime": "4.0.9",
     "@tarojs/shared": "4.0.9",
     "@tarojs/taro": "4.0.9",
-    "@tarojs/plugin-framework-vue3": "4.0.9",
-    "vue": "^3.2.24",
-    "pinia": "^2.0.10"
+    "pinia": "^2.0.10",
+    "vue": "^3.2.24"
   },
   "devDependencies": {
-    "@babel/plugin-proposal-class-properties": "7.14.5",
+    "@ajiu9/eslint-config": "^2.5.3",
     "@babel/core": "^7.8.0",
+    "@babel/plugin-proposal-class-properties": "7.14.5",
     "@tarojs/cli": "4.0.9",
     "@tarojs/vite-runner": "4.0.9",
-    "babel-preset-taro": "4.0.9",
-    "eslint-config-taro": "4.0.9",
-    "eslint": "^8.12.0",
-    "stylelint": "^14.4.0",
-    "terser": "^5.16.8",
-    "vite": "^4.2.0",
     "@vitejs/plugin-vue": "^4.0.0",
     "@vitejs/plugin-vue-jsx": "^3.0.0",
-    "eslint-plugin-vue": "^8.0.0",
+    "babel-preset-taro": "4.0.9",
+    "eslint": "^9.22.0",
+    "lint-staged": "^15.5.0",
+    "postcss": "^8.4.18",
     "sass": "^1.60.0",
-    "@typescript-eslint/parser": "^6.2.0",
-    "@typescript-eslint/eslint-plugin": "^6.2.0",
-    "typescript": "^5.1.0",
+    "simple-git-hooks": "^2.11.1",
+    "stylelint": "^14.4.0",
+    "terser": "^5.16.8",
     "tsconfig-paths-webpack-plugin": "^4.0.1",
-    "postcss": "^8.4.18"
+    "typescript": "^5.1.0",
+    "vite": "^4.2.0"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
   }
 }
