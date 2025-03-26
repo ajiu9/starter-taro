@@ -1,6 +1,5 @@
 {
   "name": "starter-taro",
-  "type": "module",
   "version": "1.0.0",
   "description": "This is a taro template",
   "templateInfo": {
