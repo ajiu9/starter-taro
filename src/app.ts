@@ -1,7 +1,7 @@
 import { createPinia } from 'pinia'
 import { createApp } from 'vue'
 
-import './app.scss'
+import './app.css'
 
 const App = createApp({
 // eslint-disable-next-line unused-imports/no-unused-vars

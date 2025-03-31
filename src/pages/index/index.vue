@@ -13,5 +13,14 @@ export default {
 <template>
   <view class="index">
     <Counter />
+
+    <Text class="text-[#123456] bg-amber-100">
+      tailwindcss
+    </Text>
+    <View class="index bg-[#123456]">
+      <Text class="text-[55rpx] text-[#fff]">
+        Hello world!
+      </Text>
+    </View>
   </view>
 </template>
