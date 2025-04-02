@@ -11,6 +11,8 @@ export default defineConfig<'vite'>(async (merge, { command, mode }) => {
   // const { default: tailwindcss } = await import('@tailwindcss/vite')
 
   const baseConfig: UserConfigExport<'vite'> = {
+    // https://github.com/sonofmagic/weapp-tailwindcss/blob/6811f231932925cf1f34ef45eda5b233d792d54f/packages/weapp-tailwindcss/src/typedoc.export.ts#L350
+    tailwindcssBasedir: './',
     projectName: 'starter-taro',
     date: '2025-3-23',
     designWidth: 750,

@@ -5,7 +5,7 @@
   "templateInfo": {
     "name": "vue3-pinia",
     "typescript": true,
-    "css": "Sass",
+    "css": "None",
     "framework": "Vue3"
   },
   "author": "",
