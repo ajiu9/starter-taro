@@ -1,3 +1,7 @@
 @import "weapp-tailwindcss";
 @config "../tailwind.config.js";
 
+/* @plugin "@iconify/tailwind4" {
+  prefix: "iconify";
+  scale: 1.2;
+ } */
