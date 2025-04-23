@@ -2,7 +2,7 @@
   "miniprogramRoot": "dist/",
   "projectname": "starter-taro",
   "description": "This is a taro template",
-  "appid": "wxc9d90c61a28f87af",
+  "appid": "",
   "setting": {
     "urlCheck": true,
     "es6": false,

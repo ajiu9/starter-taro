@@ -65,6 +65,7 @@
     "@babel/plugin-proposal-class-properties": "7.14.5",
     "@egoist/tailwindcss-icons": "^1.9.0",
     "@iconify/json": "^2.2.330",
+    "@iconify/tailwind4": "^1.0.6",
     "@tailwindcss/postcss": "^4.0.17",
     "@tailwindcss/vite": "^4.0.17",
     "@tarojs/cli": "4.0.9",

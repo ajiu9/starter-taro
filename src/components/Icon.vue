@@ -25,28 +25,27 @@ const iconClass = computed(() => {
   if (props.className)
     classes.push(props.className)
 
-  // 添加内联样式
-  const styles = []
+  return classes.join(' ')
+})
+
+// 计算样式对象
+const styleObject = computed(() => {
+  const styles: Record<string, string> = {}
+
   if (props.size) {
-    const size = typeof props.size === 'number' ? `${props.size}px` : props.size
-    styles.push(`--icon-size: ${size}`)
+    const sizeValue = typeof props.size === 'number' ? `${props.size}px` : props.size
+    styles['--icon-size'] = sizeValue
   }
 
   if (props.color)
-    styles.push(`--icon-color: ${props.color}`)
+    styles['--icon-color'] = props.color
 
-  // 添加样式类
-  if (styles.length > 0)
-    classes.push(`[style="${styles.join(';')}"]`)
-
-  console.log(classes, classes.join(' '))
-
-  return classes.join(' ')
+  return styles
 })
 </script>
 
 <template>
-  <text :class="iconClass" />
+  <text :class="iconClass" :style="styleObject" />
 </template>
 
 <style>
