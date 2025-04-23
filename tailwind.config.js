@@ -1,5 +1,4 @@
-// import { getIconCollections, iconsPlugin } from '@egoist/tailwindcss-icons'
-import tailwind4 from '@iconify/tailwind4'
+import { getIconCollections, iconsPlugin } from '@egoist/tailwindcss-icons'
 
 export default {
   content: ['./src/**/*.{html,js,ts,jsx,tsx,vue}'],
@@ -7,11 +6,10 @@ export default {
     extend: {},
   },
   plugins: [
-    tailwind4(),
-    // iconsPlugin({
-    //   // Select the icon collections you want to use
-    //   collections: getIconCollections(['mdi', 'lucide']),
-    // }),
+    iconsPlugin({
+      // Select the icon collections you want to use
+      collections: getIconCollections(['mdi', 'lucide']),
+    }),
   ],
   // 小程序环境下的特殊配置
   corePlugins: {
