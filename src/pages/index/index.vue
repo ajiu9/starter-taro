@@ -37,10 +37,10 @@ export default {
           使用Icon组件:
         </Text>
         <view class="flex justify-around items-center">
-          <IconItem name="mdi-home" size="24" color="#1677ff" />
-          <IconItem name="mdi-account" size="32" color="#52c41a" />
-          <IconItem name="mdi-heart" size="48" color="#f5222d" />
-          <IconItem name="mdi-star" size="24" color="#faad14" />
+          <IconItem name="mdi-home" :size="24" color="#1677ff" />
+          <IconItem name="mdi-account" :size="32" color="#52c41a" />
+          <IconItem name="mdi-heart" :size="48" color="#f5222d" />
+          <IconItem name="mdi-star" :size="16" color="#faad14" />
         </view>
       </view>
 

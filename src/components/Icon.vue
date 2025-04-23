@@ -34,11 +34,13 @@ const styleObject = computed(() => {
 
   if (props.size) {
     const sizeValue = typeof props.size === 'number' ? `${props.size}px` : props.size
-    styles['--icon-size'] = sizeValue
+    styles.width = sizeValue
+    styles.height = sizeValue
+    styles.fontSize = sizeValue
   }
 
   if (props.color)
-    styles['--icon-color'] = props.color
+    styles.color = props.color
 
   return styles
 })
@@ -52,10 +54,10 @@ const styleObject = computed(() => {
 /* 基础图标样式 */
 [class^="i-"] {
   display: inline-block;
-  width: var(--icon-size, 1em);
-  height: var(--icon-size, 1em);
-  color: var(--icon-color, currentColor);
-  font-size: var(--icon-size, 1em);
+  width: 1em;
+  height: 1em;
+  color: currentColor;
+  font-size: 1em;
   line-height: 1;
 }
 </style>
