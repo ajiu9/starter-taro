@@ -37,16 +37,12 @@ export default defineConfig<'vite'>(async (merge, { command, mode }) => {
     compiler: {
       type: 'vite',
       vitePlugins: [
-        //  No "exports" main defined
-        tailwindcss(),
         {
           name: 'postcss-config-loader-plugin',
           config(config) {
             // 加载 tailwindcss
-            if (typeof config.css?.postcss === 'object') {
-              // @ts-ignore
+            if (typeof config.css?.postcss === 'object')
               config.css?.postcss.plugins?.unshift(tailwindcss())
-            }
           },
         },
         UnifiedViteWeappTailwindcssPlugin({
