@@ -2,6 +2,7 @@ import { createPinia } from 'pinia'
 import { createApp } from 'vue'
 
 import './app.css'
+// import '@nutui/nutui/dist/style.css'
 
 const App = createApp({
 // eslint-disable-next-line unused-imports/no-unused-vars

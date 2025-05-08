@@ -1,14 +1,16 @@
-<script>
+<script setup lang="ts">
+import { ref } from 'vue'
 import Counter from '../../components/Counter.vue'
 import IconItem from '../../components/Icon.vue'
 import './index.scss'
 
-export default {
-  name: 'Index',
-  components: {
-    Counter,
-    IconItem,
-  },
+const date = ref('2022-02-01')
+const startDate = ref('2022-01-11')
+const endDate = ref('2022-11-30')
+
+const choose = (param) => {
+  console.log(param)
+  date.value = param[3]
 }
 </script>
 
@@ -57,5 +59,29 @@ export default {
         </view>
       </view>
     </view>
+
+    <nut-button type="primary">
+      Primary
+    </nut-button>
+    <nut-button type="info">
+      Info
+    </nut-button>
+    <nut-button type="default">
+      Default
+    </nut-button>
+    <nut-button type="danger">
+      Danger
+    </nut-button>
+    <nut-button type="warning">
+      Warning
+    </nut-button>
+    <nut-button type="success">
+      Success
+    </nut-button>
+
+    <nut-cell title="Title" desc="Description"></nut-cell>
+    <nut-cell title="Title" sub-title="Subtitle" desc="Description"></nut-cell>
+
+    <nut-skeleton width="200px" height="15px" animated></nut-skeleton>
   </view>
 </template>

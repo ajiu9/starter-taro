@@ -1,6 +1,8 @@
+import NutUIResolver from '@nutui/auto-import-resolver'
 import tailwindcss from '@tailwindcss/postcss'
-
 import { defineConfig, type UserConfigExport } from '@tarojs/cli'
+import vue from '@vitejs/plugin-vue'
+import Components from 'unplugin-vue-components/vite'
 import { UnifiedViteWeappTailwindcssPlugin } from 'weapp-tailwindcss/vite'
 import devConfig from './dev'
 import prodConfig from './prod'
@@ -15,12 +17,18 @@ export default defineConfig<'vite'>(async (merge, { command, mode }) => {
     tailwindcssBasedir: './',
     projectName: 'starter-taro',
     date: '2025-3-23',
-    designWidth: 750,
+    // nutui 组件库 使用的是375px 设计稿
+    designWidth(input) {
+      if (input?.file?.replace(/\\+/g, '/').indexOf('@nutui') > -1)
+        return 375
+
+      return 750
+    },
     deviceRatio: {
       640: 2.34 / 2,
       750: 1,
-      375: 2,
       828: 1.81 / 2,
+      375: 2 / 1,
     },
     sourceRoot: 'src',
     outputRoot: 'dist',
@@ -37,6 +45,10 @@ export default defineConfig<'vite'>(async (merge, { command, mode }) => {
     compiler: {
       type: 'vite',
       vitePlugins: [
+        // vue(),
+        Components({
+          resolvers: [NutUIResolver()],
+        }),
         {
           name: 'postcss-config-loader-plugin',
           config(config) {

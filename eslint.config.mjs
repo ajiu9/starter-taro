@@ -9,6 +9,7 @@ export default ajiu9(
   {
     rules: {
       'node/prefer-global/process': 'off',
+      'vue/html-self-closing': 'off',
     },
   },
 
