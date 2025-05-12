@@ -1,7 +1,7 @@
 import NutUIResolver from '@nutui/auto-import-resolver'
 import tailwindcss from '@tailwindcss/postcss'
 import { defineConfig, type UserConfigExport } from '@tarojs/cli'
-import vue from '@vitejs/plugin-vue'
+// import vue from '@vitejs/plugin-vue'
 import Components from 'unplugin-vue-components/vite'
 import { UnifiedViteWeappTailwindcssPlugin } from 'weapp-tailwindcss/vite'
 import devConfig from './dev'
@@ -47,7 +47,9 @@ export default defineConfig<'vite'>(async (merge, { command, mode }) => {
       vitePlugins: [
         // vue(),
         Components({
-          resolvers: [NutUIResolver()],
+          resolvers: [NutUIResolver({
+            taro: true,
+          })],
         }),
         {
           name: 'postcss-config-loader-plugin',

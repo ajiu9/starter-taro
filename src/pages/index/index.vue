@@ -12,6 +12,14 @@ const choose = (param) => {
   console.log(param)
   date.value = param[3]
 }
+
+const formData = ref({
+  name: '',
+  age: '',
+  tel: '',
+  addr: '',
+  info: '',
+})
 </script>
 
 <template>
@@ -83,5 +91,23 @@ const choose = (param) => {
     <nut-cell title="Title" sub-title="Subtitle" desc="Description"></nut-cell>
 
     <nut-skeleton width="200px" height="15px" animated></nut-skeleton>
+
+    <nut-form>
+      <nut-form-item label="姓名">
+        <nut-input v-model="formData.name" placeholder="请输入姓名" type="text" />
+      </nut-form-item>
+      <nut-form-item label="年龄">
+        <nut-input v-model="formData.age" placeholder="请输入年龄" type="text" />
+      </nut-form-item>
+      <nut-form-item label="联系电话">
+        <nut-input v-model="formData.tel" placeholder="请输入联系电话" type="text" />
+      </nut-form-item>
+      <nut-form-item label="地址">
+        <nut-input v-model="formData.addr" placeholder="请输入地址" type="text" />
+      </nut-form-item>
+      <nut-form-item label="备注">
+        <nut-textarea v-model="formData.info" placeholder="请输入备注" type="text" />
+      </nut-form-item>
+    </nut-form>
   </view>
 </template>
